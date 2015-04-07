@@ -267,7 +267,7 @@ require([], function(){
 
 	function clock() {
 		var now = new Date();
-		var outStr = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
+		var outStr = now.getHours() + ':' + (now.getMinutes()<10?'0' + now.getMinutes() :''+ now.getMinutes()) + ':' + (now.getSeconds()<10?'0' + now.getSeconds() :'' + now.getSeconds());
 		document.getElementById('clockDiv').innerHTML=outStr;
 		setTimeout('clock()',1000);
 	}
