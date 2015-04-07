@@ -7,6 +7,7 @@
 <style>
 	@import url("bower_components/bootstrap/dist/css/bootstrap.min.css");
 	@import url("bower_components/font-awesome/css/font-awesome.css");
+	@import url("css/sidebar.css");
 </style>
 <style>
 	body{
@@ -71,84 +72,190 @@
 	}
 </style>
 <body>
-
-<div id="content">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-
-				<div class="col-md-6">
-					
-					<div class="container block">
-						<h1 id="clockDiv">23:18:16</h1>
-						<h1 class="text-center">
-							<span class="time">4|6|2015</span>
-							<br>
-							<span class="date">Monday</span>
-						</h1>
+<div id="wrapper" class="">
+	<div id="content">
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand">
+					<a href="#">
+						INTERFACE
+					</a>
+				</li>
+				<li>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalSettings">
+						Settings
+					</button>
+				</li>
+				<li>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalConfig">
+						Config
+					</button>
+				</li>
+				<li>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalEditor">
+						Editor
+					</button>
+				</li>
+				<li>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalError">
+						Errors
+					</button>
+				</li>
+			</ul>
+		</div>
+		<div id="page-content-wrapper" class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="social-links">
+						<ul class="list-inline">
+							<li><a id="menu-toggle" href="#"><i class="fa fa-arrow-circle-o-right fa-5x"></i></a></li>
+							<li><a href="https://www.facebook.com/"><i class="fa fa-facebook-square fa-5x"></i></a></li>
+							<li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter-square fa-5x"></i></a></li>
+							<li><a href="https://github.com/"><i class="fa fa-github-square fa-5x"></i></a></li>
+						</ul>
 					</div>
-					
+					<div class="col-sm-6 col-md-6">
+
+						<div class="container block">
+							<h1 id="clockDiv">23:18:16</h1>
+							<h1 class="text-center">
+								<span class="time">4|6|2015</span>
+								<br>
+								<span class="date">Monday</span>
+							</h1>
+						</div>
+
+
+						<div class="draggable form-group well">
+							<label for="css">CSS Editor:</label>
+							<textarea class="form-control" rows="5" id="css"></textarea>
+							<button class="btn btn-primary" id="go">Run</button>
+						</div>
+
+					</div>
+
 				</div>
-				<div class="col-md-6">
-
-					<div class="draggable form-group well">
-						<label for="css">CSS Editor:</label>
-						<textarea class="form-control" rows="5" id="css"></textarea>
-						<button class="btn btn-primary" id="go">Run</button>
-					</div>
-
-					<div class="draggable form-group well">
-						<table>
-							<tr><td>Text to Save:</td></tr>
-							<tr>
-								<td colspan="3">
-									<textarea id="inputTextToSave" style="width:512px;height:256px"></textarea>
-								</td>
-							</tr>
-							<tr>
-								<td>Filename to Save As:</td>
-								<td><input id="inputFileNameToSaveAs"></input></td>
-								<td><button onclick="saveTextAsFile()">Save Text to File</button></td>
-							</tr>
-							<tr>
-								<td>Select a File to Load:</td>
-								<td><input type="file" id="fileToLoad">
-								<td><button onclick="loadFileAsText()">Load Selected File</button><td>
-							</tr>
-						</table>
-					</div>
-					
-				</div>
-
 			</div>
 		</div>
 	</div>
-	
-	
+</div>
 
+<!-- Modal -->
+<div class="draggable modal fade" id="modalSettings" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="settingsModalLabel">Settings</h4>
+			</div>
+			<div class="modal-body">
+				<ul>
+					<li>content</li>
+					<li>content</li>
+					<li>content</li>
+					<li>content</li>
+					<li>content</li>
+					<li>content</li>
+					<li>content</li>
+					<li>content</li>
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
 
-	<script>
-		
-//		var url = css;
-//		$.getScript( url, function() {
-//			$( "#go" ).click(function() {
-//				$( ".block" )
-//						.animate({
-//							backgroundColor: "rgb(255, 180, 180)"
-//						}, 1000 )
-//						.delay( 500 )
-//						.animate({
-//							backgroundColor: "olive"
-//						}, 1000 )
-//						.delay( 500 )
-//						.animate({
-//							backgroundColor: "#00f"
-//						}, 1000 );
-//			});
-//		});
-	</script>
+<!-- Modal -->
+<div class="draggable modal fade" id="modalEditor" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h2 class="modal-title" id="editorModalLabel">Editor</h2>
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="list-inline">
+							<li><a href="#" id="css3"><i class="fa fa-css3 fa-2x"></i></a></li>
+							<li><a href="#" id="html5"><i class="fa fa-html5 fa-2x"></i></a></li>
+							<li><a href="#" id="js"><i class="fa fa-code fa-2x"></i></a></li>
+							<li><a href="#" id="otherCode"><i class="fa fa-file-code-o fa-2x"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+					<div class="modal-body">
 
+						<div class="row">
+							<div class="col-md-12">
+								<textarea style="width:100%;" rows="12" id="inputTextToSave" ></textarea>
+							</div>
+						</div>
 
+					</div>
+			<div class="modal-footer">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row">
+								<label for="fileToLoad">Select a File to Load:</label>
+								<input type="file" id="fileToLoad">
+								<button class="btn btn-primary" onclick="loadFileAsText()">Load Selected File</button>
+						</div>
+
+						<div class="row">
+								<label for="inputFileNameToSaveAs">Filename to Save As:</label>
+								<input id="inputFileNameToSaveAs"/>
+								<button class="btn btn-primary" onclick="saveTextAsFile()">Save Text to File</button>
+						</div>
+						
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="draggable modal fade" id="modalConfig" tabindex="-1" role="dialog" aria-labelledby="configModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="configModalLabel">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				Config Panel
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="draggable modal fade" id="modalError" tabindex="-1" role="dialog" aria-labelledby="errorsModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="errorsModalLabel">Errors</h4>
+			</div>
+			<div class="modal-body">
+				Errors Panel
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
 </div>
 
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -352,5 +459,13 @@ require([], function(){
 		};
 		fileReader.readAsText(fileToLoad, "UTF-8");
 	}
+</script>
+<script>
+
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+
 </script>
 </body>
