@@ -8,6 +8,7 @@
 	@import url("bower_components/bootstrap/dist/css/bootstrap.min.css");
 	@import url("bower_components/font-awesome/css/font-awesome.css");
 	@import url("css/sidebar.css");
+	@import url("bower_components/animate.css/animate.css");
 </style>
 <style>
 	body{
@@ -16,10 +17,11 @@
 		background-color: #030303; 
 		color:#00eefa; 
 		overflow: hidden;
+		height:100%;
 	}
 	#content{
 		position:absolute;
-		padding:50px;
+		/*padding:50px;*/
 		
 	}
 	.form-control, textarea{background-color: #000;}
@@ -28,8 +30,25 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-	body {
-		height: 100%;
+	a{
+		text-decoration: none;
+		
+	}
+	a:hover{
+		  text-decoration: none;
+
+	  }
+	a:visited{
+		text-decoration: none;
+
+	}
+	a:active{
+		text-decoration: none;
+
+	}
+	a:focus{
+		text-decoration: none;
+
 	}
 	.carousel,
 	.item,
@@ -57,7 +76,7 @@
 		text-shadow: 1px 2px 10px #333;
 		color: #efefef;
 		vertical-align: middle;
-		opacity: 0.8;
+		opacity: 0.6;
 	}
 	.block #clockDiv {
 		font-size: 20rem;
@@ -71,8 +90,8 @@
 		border: none;
 	}
 </style>
-<body>
-<div id="wrapper" class="">
+<body class="animated fadeIn">
+<div id="wrapper" class="toggled">
 	<div id="content">
 		<div id="sidebar-wrapper">
 			<ul class="sidebar-nav">
@@ -112,7 +131,7 @@
 				<div class="col-md-12">
 					<div class="social-links">
 						<ul class="list-inline">
-							<li><a id="menu-toggle" href="#"><i class="fa fa-arrow-circle-o-right fa-5x"></i></a></li>
+							<li><a id="menu-toggle" class="fa fa-arrow-right fa-5x" href="#"></a></li>
 							<li><a href="https://www.facebook.com/"><i class="fa fa-facebook-square fa-5x"></i></a></li>
 							<li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter-square fa-5x"></i></a></li>
 							<li><a href="https://github.com/"><i class="fa fa-github-square fa-5x"></i></a></li>
@@ -127,13 +146,6 @@
 								<br>
 								<span class="date">Monday</span>
 							</h1>
-						</div>
-
-
-						<div class="draggable form-group well">
-							<label for="css">CSS Editor:</label>
-							<textarea class="form-control" rows="5" id="css"></textarea>
-							<button class="btn btn-primary" id="go">Run</button>
 						</div>
 
 					</div>
@@ -461,10 +473,23 @@ require([], function(){
 	}
 </script>
 <script>
-
 	$("#menu-toggle").click(function(e) {
 		e.preventDefault();
 		$("#wrapper").toggleClass("toggled");
+
+		if($("#wrapper").hasClass("toggled")){
+
+			$("#menu-toggle").removeClass("fa-arrow-left");
+			$("#wrapper").addClass("toggled");
+			$("#menu-toggle").addClass("fa-arrow-right");
+
+		}else{
+
+			$("#menu-toggle").hasClass("fa-arrow-right");
+			$("#menu-toggle").removeClass("fa-arrow-right");
+			$("#menu-toggle").addClass("fa-arrow-left");
+		}
+
 	});
 
 </script>
